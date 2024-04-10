@@ -79,3 +79,10 @@ input:focus{
 .button:hover{
     background: rgb(220, 220, 220);
 }
+
+.error{
+    font-size: 18px;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+}

@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Sign UP/Log In</title>
+    <title>Registration Form Update</title>
 </head>
 <body>
     <div class="main">
@@ -37,9 +37,9 @@
                     <input type="text" name = "pwd" placeholder="Password">
                     <button class="button">Log IN</button>
                 </form>
-                <?php
+                <!-- <?php
                     check_login_errors();
-                ?>
+                ?> -->
             </div>
         <?php }
         else {

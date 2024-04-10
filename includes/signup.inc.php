@@ -2,7 +2,7 @@
 
 if ($_SERVER["REQUEST_METHOD"] === "POST"){
     $username = $_POST["username"];
-    $pwd = $_POST["password"];
+    $pwd = $_POST["pwd"];
     $email = $_POST["email"];
 
     try {
@@ -14,9 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
         $errors = [];
 
         if(empty_inputs($username, $pwd, $email)){
-            $errors["empty_username"] = "Fill in the username";
-            $errors["empty_password"] = "Fill in the password";
-            $errors["empty_email"] = "Fill in the email";
+            $errors["empty_inputs"] = "Fill in all the gaps";
         }
         if(used_username($pdo, $username)){
             $errors["used_username"] = "Username is already used";
@@ -25,8 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
             $errors["used_email"] = "Email is already used";
         }
         if(not_valid_email($email)){
-            $errors["used_email"] = "Email is wrong";
+            $errors["not_valid_email"] = "Email is wrong";
         }
+
+        require_once 'config_session.inc.php';
 
         if($errors){
             $_SESSION['signup_errors'] = $errors;
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
             die();
         }
 
-        create_user($username, $pwd, $email);
+        create_user($pdo, $username, $pwd, $email);
 
         header("Location: ../index.php?signup=success");
 
