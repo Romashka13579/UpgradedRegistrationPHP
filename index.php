@@ -37,9 +37,9 @@
                     <input type="text" name = "pwd" placeholder="Password">
                     <button class="button">Log IN</button>
                 </form>
-                <!-- <?php
+                <?php
                     check_login_errors();
-                ?> -->
+                ?>
             </div>
         <?php }
         else {

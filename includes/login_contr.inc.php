@@ -20,7 +20,7 @@ function not_existing_username(bool|array $result) {
     }
 }
 
-function is_pwd_wrong(string $pwd, string $hashedPwd) {
+function wrong_pwd(string $pwd, string $hashedPwd) {
     if(password_verify($pwd, $hashedPwd)){
         return false;
     }
