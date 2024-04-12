@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
         if($errors){
             $_SESSION["login_errors"] = $errors;
 
-            header("Location: ../index.php");
+            header("Location: ../registration.php");
             die();
         }
 
@@ -59,6 +59,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
 
 }
 else{
-    header("Location: ../index.php");
+    header("Location: ../registration.php");
     die();
 }
