@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost';
-$dbname = 'registration_system';
+$dbname = 'firstproject';
 $dbusername = 'root';
 $dbpassword = '';
 

@@ -1,5 +1,6 @@
 <?php
     require_once 'includes/config_session.inc.php';
+    require_once 'includes/exc_picker_view.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +31,7 @@
                 </a>
             </div>
         </div>
+        <?php excercises();?>
     </div>
 </body>
 </html>
