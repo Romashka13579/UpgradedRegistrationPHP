@@ -26,3 +26,4 @@ CREATE TABLE excercises (
 );
 
 INSERT INTO excercises (exc_name, exc_description) VALUES ('Bench Press', 'Lying on a bench and pressing weight upward using either a barbell or a pair of dumbbell');
+INSERT INTO excercises (exc_name, exc_description) VALUES ('Squats', 'A strength exercise in which the trainee lowers their hips from a standing position and then stands back up');

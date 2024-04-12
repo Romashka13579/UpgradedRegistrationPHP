@@ -1,6 +1,16 @@
 <?php
     require_once 'includes/config_session.inc.php';
     require_once 'includes/exc_picker_view.inc.php';
+
+    require_once 'includes/dbh.inc.php';
+    require_once 'includes/exc_picker_model.inc.php';
+    require_once 'includes/exc_picker_contr.inc.php';
+
+    $excercises = getExcercises($pdo);
+
+    require_once 'includes/config_session.inc.php';
+
+    $_SESSION['existing_excercises'] = $excercises;
 ?>
 
 <!DOCTYPE html>
@@ -35,3 +45,10 @@
     </div>
 </body>
 </html>
+
+<?php
+    $pdo = null;
+    $stmt = null;
+
+    die();
+?>

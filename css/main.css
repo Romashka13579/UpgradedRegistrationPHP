@@ -48,7 +48,7 @@
     align-items: center;
     gap: 50px;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     box-sizing: border-box;
 }
 
@@ -56,13 +56,14 @@
     display: flex;
     align-items: center;
     width: 300px;
+    min-height: 300px;
     justify-content: left;
-    padding: 20px;
+    padding: 20px 20px 30px 20px;
     box-sizing: border-box;
     background: white;
     box-shadow: 9px 9px 10px 1px rgba(0, 0, 0, 0.141);
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .excercise-header{
@@ -99,4 +100,8 @@
 
 .excercise-button:hover{
     background: rgb(208, 208, 208);
+}
+
+.excercise-form{
+    margin-top: auto;
 }
