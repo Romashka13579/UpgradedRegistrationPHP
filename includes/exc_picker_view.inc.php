@@ -10,6 +10,7 @@ function excercises(){
                 <?php foreach ($excercises as $excercise) {?>
                 <form class="excercise-form" action="includes/exc_picker.inc.php" method="POST">
                     <div class="excercise">
+                        <input name="exc_id" type="hidden" style="display:none;" value="<?php echo $excercise["id"]?>">
                         <div class="excercise-header"><?php echo $excercise["exc_name"]?></div>
                         <div class="excercise-line"></div>
                         <div class="excercise-description"><?php echo $excercise["exc_description"]?></div>
@@ -17,6 +18,26 @@ function excercises(){
                     </div>
                 </form>
                 <?php }?>
+            </div>
+        <?php
+    }
+}
+
+function pickedExcercises(){
+    if(isset($_SESSION["picked_excercises"])){
+        $excercise = $_SESSION["picked_excercises"];
+        ?>
+            <div class="excercise-picker">
+                <?php ?>
+                <form class="excercise-form" action="includes/exc_picker.inc.php" method="POST">
+                    <div class="excercise">
+                        <input name="exc_id" type="hidden" style="display:none;" value="<?php echo $excercise["exc_id"]?>">
+                        <div class="excercise-header"><?php echo $excercise["exc_name"]?></div>
+                        <div class="excercise-line"></div>
+                        <button class="excercise-button">Pick Excercise</button>
+                    </div>
+                </form>
+                <?php ?>
             </div>
         <?php
     }

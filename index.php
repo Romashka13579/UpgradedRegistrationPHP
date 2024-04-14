@@ -6,7 +6,7 @@
     require_once 'includes/exc_picker_model.inc.php';
     require_once 'includes/exc_picker_contr.inc.php';
 
-    $excercises = getExcercises($pdo);
+    $excercises = getAllExcercises($pdo);
 
     require_once 'includes/config_session.inc.php';
 
@@ -20,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
-    <title>Registration Form Update</title>
+    <title>Excercise Picker</title>
 </head>
 <body>
     <div class="main">
@@ -42,6 +42,7 @@
             </div>
         </div>
         <?php excercises();?>
+        <?php pickedExcercises();?>
     </div>
 </body>
 </html>
