@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
                 "exc_id" => $excerciseInfo["id"]
             ];
 
-            $_SESSION['picked_excercises'] = $userExcerciseData;
+            createUserExcercise($pdo, $userExcerciseData);
         }
 
         header("Location: ../index.php?picking=success");

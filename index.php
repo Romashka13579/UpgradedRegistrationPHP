@@ -11,6 +11,10 @@
     require_once 'includes/config_session.inc.php';
 
     $_SESSION['existing_excercises'] = $excercises;
+
+    $pickedExcercises = getAllPickedExcercises($pdo);
+
+    $_SESSION['picked_excercises'] = $pickedExcercises;
 ?>
 
 <!DOCTYPE html>

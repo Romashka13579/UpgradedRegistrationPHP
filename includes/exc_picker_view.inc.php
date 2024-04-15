@@ -24,20 +24,16 @@ function excercises(){
 }
 
 function pickedExcercises(){
-    if(isset($_SESSION["picked_excercises"])){
-        $excercise = $_SESSION["picked_excercises"];
-        ?>
+    if(isset($_SESSION['picked_excercises'])){
+        $excercises = $_SESSION["picked_excercises"];
+            ?>
             <div class="excercise-picker">
-                <?php ?>
-                <form class="excercise-form" action="includes/exc_picker.inc.php" method="POST">
-                    <div class="excercise">
-                        <input name="exc_id" type="hidden" style="display:none;" value="<?php echo $excercise["exc_id"]?>">
+                <?php foreach ($excercises as $excercise) {?>
+                <div class="excercise">
                         <div class="excercise-header"><?php echo $excercise["exc_name"]?></div>
-                        <div class="excercise-line"></div>
-                        <button class="excercise-button">Pick Excercise</button>
+                        <div class="excercise-line"><?php echo $excercise["exc_description"]?></div>
                     </div>
-                </form>
-                <?php ?>
+                <?php }?>
             </div>
         <?php
     }
