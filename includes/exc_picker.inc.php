@@ -12,19 +12,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
 
         $excerciseInfo = getExcercise($pdo, $exc_id);
         
-        if($excerciseInfo) {
-            
-            $userExcerciseData = [
-                "username" => $_SESSION['user_username'],
-                "exc_name" => $excerciseInfo["exc_name"],
-                "user_id" => $_SESSION['user_id'],
-                "exc_id" => $excerciseInfo["id"]
-            ];
-
-            createUserExcercise($pdo, $userExcerciseData);
+        if($excerciseInfo && isset($_SESSION['user_id'])) {
+            if(excerciseNotPicked($pdo, $excerciseInfo["id"], $_SESSION['user_id'])){
+                $userExcerciseData = [
+                    "username" => $_SESSION['user_username'],
+                    "exc_name" => $excerciseInfo["exc_name"],
+                    "user_id" => $_SESSION['user_id'],
+                    "exc_id" => $excerciseInfo["id"]
+                ];
+    
+                createUserExcercise($pdo, $userExcerciseData);
+            }
         }
 
-        header("Location: ../index.php?picking=success");
+        header("Location: ../index.php");
 
         $pdo = null;
         $stmt = null;

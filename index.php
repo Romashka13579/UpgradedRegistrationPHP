@@ -12,9 +12,11 @@
 
     $_SESSION['existing_excercises'] = $excercises;
 
-    $pickedExcercises = getAllPickedExcercises($pdo);
+    if(isset($_SESSION['user_id'])){
+        $pickedExcercises = getAllPickedExcercises($pdo, $_SESSION['user_id']);
 
-    $_SESSION['picked_excercises'] = $pickedExcercises;
+        $_SESSION['picked_excercises'] = $pickedExcercises;
+    }
 ?>
 
 <!DOCTYPE html>

@@ -32,10 +32,11 @@ function insertExcercise(object $pdo, array $userExcerciseData) {
     $stmt->execute();
 }
 
-function selectPickedExcercisesID(object $pdo) {
-    $query = "SELECT exc_id FROM users_excercises;";
+function selectPickedExcercisesID(object $pdo, int $user_id) {
+    $query = "SELECT exc_id FROM users_excercises WHERE user_id = :user_id;";
 
     $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":user_id", $user_id);
     $stmt->execute();
     $result = $stmt->fetchALL(PDO::FETCH_ASSOC);
     return $result;
@@ -46,6 +47,17 @@ function selectExcerciseByID(object $pdo, int $id) {
 
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":id", $id);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+function findPickedExcercise(object $pdo, int $exc_id, int $user_id) {
+    $query = "SELECT * FROM users_excercises WHERE exc_id = :exc_id AND user_id = :user_id;";
+
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":exc_id", $exc_id);
+    $stmt->bindParam(":user_id", $user_id);
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result;

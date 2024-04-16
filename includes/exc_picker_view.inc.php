@@ -20,6 +20,7 @@ function excercises(){
                 <?php }?>
             </div>
         <?php
+        unset($_SESSION['existing_excercises']);
     }
 }
 
@@ -31,10 +32,13 @@ function pickedExcercises(){
                 <?php foreach ($excercises as $excercise) {?>
                 <div class="excercise">
                         <div class="excercise-header"><?php echo $excercise["exc_name"]?></div>
-                        <div class="excercise-line"><?php echo $excercise["exc_description"]?></div>
+                        <div class="excercise-line"></div>
+                        <div class="excercise-description"><?php echo $excercise["exc_description"]?></div>
                     </div>
                 <?php }?>
             </div>
         <?php
+
+        unset($_SESSION['picked_excercises']);
     }
 }

@@ -16,12 +16,21 @@ function createUserExcercise(object $pdo, array $userExcerciseData) {
     insertExcercise($pdo, $userExcerciseData);
 }
 
-function getAllPickedExcercises(object $pdo) {
-    $excercisesID = selectPickedExcercisesID($pdo);
+function getAllPickedExcercises(object $pdo, int $user_id) {
+    $excercisesID = selectPickedExcercisesID($pdo, $user_id);
     $pickedExcercises = [];
     foreach ($excercisesID as $excerciseID) {
         $pickedExcercise = selectExcerciseByID($pdo, $excerciseID["exc_id"]);
         array_push($pickedExcercises, $pickedExcercise);
     }
     return $pickedExcercises;
+}
+
+function excerciseNotPicked(object $pdo, int $exc_id, int $user_id) {
+    if(!findPickedExcercise($pdo, $exc_id, $user_id)){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
