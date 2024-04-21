@@ -1,0 +1,88 @@
+.main{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.schedule{
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 100px;
+    box-sizing: border-box;
+    background: rgb(240, 240, 240);
+}
+
+.schedule-day-box{
+    display: flex;
+    align-items: center;
+    width: 240px;
+    min-height: 240px;
+    justify-content: left;
+    padding: 20px 20px 30px 20px;
+    box-sizing: border-box;
+    background: white;
+    box-shadow: 9px 9px 10px 1px rgba(0, 0, 0, 0.141);
+    flex-direction: column;
+    gap: 20px;
+}
+
+.schedule-day{
+    font-size: 30px;
+    font-weight: 600;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(6, 0, 16);
+}
+
+.schedule-buttons{
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.schedule-add-button{
+    padding: 6px 10px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    background: rgb(241, 148, 7);
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 3.2px solid black;
+    border-bottom: 3.2px solid black;
+    transition: 200ms;
+    border-radius: 3px;
+}
+
+.schedule-add-button:hover{
+    background: orange;
+}
+
+.schedule-rest-button{
+    padding: 4px 7px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    background: rgb(241, 73, 7);
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 3.2px solid black;
+    border-bottom: 3.2px solid black;
+    transition: 200ms;
+    border-radius: 3px;
+}
+
+.schedule-rest-button:hover{
+    background: rgb(255, 94, 0);
+}
