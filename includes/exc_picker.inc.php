@@ -10,6 +10,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
 
         require_once 'config_session.inc.php';
 
+        $picker_errors = [];
+
+        if(!isset($_SESSION['user_id'])){
+            $picker_errors["not_loged_in"] = "User is not loged in";
+        }
+
+        if($picker_errors){
+            $_SESSION['picker_errors'] = $picker_errors;
+
+            header("Location: ../index.php");
+
+            die();
+        }
+
         $excerciseInfo = getExcercise($pdo, $exc_id);
         
         if($excerciseInfo && isset($_SESSION['user_id'])) {

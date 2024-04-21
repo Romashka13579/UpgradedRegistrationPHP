@@ -41,4 +41,17 @@ function pickedExcercises(){
 
         unset($_SESSION['picked_excercises']);
     }
+    else if(isset($_SESSION['picker_errors'])){
+        $picker_errors = $_SESSION['picker_errors'];
+
+        foreach ($picker_errors as $picker_error) {
+        ?>
+            <div class="picker-errors">
+                <?php echo $picker_error;?>
+            </div>
+        <?php
+        }
+
+        unset($_SESSION['picker_errors']);
+    }
 }

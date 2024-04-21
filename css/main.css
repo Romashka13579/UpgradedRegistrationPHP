@@ -102,6 +102,7 @@
     border: none;
     outline: none;
     transition: 200ms;
+    margin-top: auto;
 }
 
 .excercise-button:hover{
@@ -110,4 +111,17 @@
 
 .excercise-form{
     margin-top: auto;
+}
+
+
+.picker-errors{
+    display: flex;
+    background: rgb(220, 15, 15);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    box-shadow: 0px 0px 10px 1px rgb(220, 15, 15);
 }
