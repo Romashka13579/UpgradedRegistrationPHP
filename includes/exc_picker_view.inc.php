@@ -5,7 +5,8 @@ declare(strict_types=1);
 function excercises(){
     if(isset($_SESSION["existing_excercises"])){
         $excercises = $_SESSION["existing_excercises"];
-            foreach ($excercises as $excercise) {?>
+        foreach ($excercises as $excercise) {
+            ?>
                 <form class="excercise-form" action="includes/exc_picker.inc.php" method="POST">
                     <div class="excercise">
                         <input name="exc_id" type="hidden" style="display:none;" value="<?php echo $excercise["id"]?>">
@@ -15,10 +16,15 @@ function excercises(){
                         <button class="excercise-button">Pick Excercise</button>
                     </div>
                 </form>
-            <?php }
+            <?php 
+        }
         unset($_SESSION['existing_excercises']);
     }
 }
+
+
+
+
 
 function pickedExcercises(){
     if(isset($_SESSION['picked_excercises'])){

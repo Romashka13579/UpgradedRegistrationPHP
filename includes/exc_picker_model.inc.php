@@ -22,13 +22,17 @@ function selectExcercise(object $pdo, string $exc_id){
 }
 
 function insertExcercise(object $pdo, array $userExcerciseData) {
-    $query = "INSERT INTO users_excercises (username, exc_name, user_id, exc_id) VALUES (:username, :exc_name, :user_id, :exc_id);";
+    $query = "INSERT INTO users_excercises (username, exc_name, user_id, exc_id, week_day, exc_sets, reps, volume) VALUES (:username, :exc_name, :user_id, :exc_id, :week_day, :exc_sets, :reps, :volume);";
 
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":username", $userExcerciseData["username"]);
     $stmt->bindParam(":exc_name", $userExcerciseData["exc_name"]);
     $stmt->bindParam(":user_id", $userExcerciseData["user_id"]);
     $stmt->bindParam(":exc_id", $userExcerciseData["exc_id"]);
+    $stmt->bindParam(":week_day", $userExcerciseData["week_day"]);
+    $stmt->bindParam(":exc_sets", $userExcerciseData["exc_sets"]);
+    $stmt->bindParam(":reps", $userExcerciseData["reps"]);
+    $stmt->bindParam(":volume", $userExcerciseData["volume"]);
     $stmt->execute();
 }
 

@@ -10,6 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
 
         require_once 'config_session.inc.php';
 
+        $day_of_the_week = $_SESSION['week_day'];
+
         $picker_errors = [];
 
         if(!isset($_SESSION['user_id'])){
@@ -32,14 +34,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
                     "username" => $_SESSION['user_username'],
                     "exc_name" => $excerciseInfo["exc_name"],
                     "user_id" => $_SESSION['user_id'],
-                    "exc_id" => $excerciseInfo["id"]
+                    "exc_id" => $excerciseInfo["id"],
+                    "week_day" => $day_of_the_week,
+                    "exc_sets" => 3,
+                    "reps" => 8,
+                    "volume" => 10,
                 ];
     
                 createUserExcercise($pdo, $userExcerciseData);
             }
         }
 
-        header("Location: ../index.php");
+        header("Location: ../schedule.php");
 
         $pdo = null;
         $stmt = null;

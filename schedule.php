@@ -51,6 +51,11 @@
             <form class="schedule-day-box"  action="includes/schedule.inc.php" method="POST">
                 <div class="schedule-day">Monday</div>
                 <input name="day" type="hidden" style="display:none;" value="<?php echo "Monday"?>">
+                <div class="schedule-excercises">
+                    <div class="schedule-excercises-type">
+                    
+                    </div>
+                </div>
                 <div class="schedule-buttons">
                     <button class="schedule-add-button">Add Excercise</button>
                     <button class="schedule-rest-button">Rest Day</button>
